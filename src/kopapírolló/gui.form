@@ -14,10 +14,13 @@
                 <Property name="text" type="java.lang.String" value="Online help"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="mnukilepes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kil&#xe9;p&#xe9;s"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnukilepesActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

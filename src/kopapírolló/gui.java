@@ -1,6 +1,8 @@
 
 package kopapírolló;
  import java.util.Random;
+ 
+import javax.swing.JOptionPane;
 
 public class gui extends javax.swing.JFrame {
 
@@ -30,7 +32,7 @@ public class gui extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnukilepes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,8 +123,13 @@ public class gui extends javax.swing.JFrame {
         jMenuItem2.setText("Online help");
         jMenu1.add(jMenuItem2);
 
-        jMenuItem1.setText("Kilépés");
-        jMenu1.add(jMenuItem1);
+        mnukilepes.setText("Kilépés");
+        mnukilepes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnukilepesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnukilepes);
 
         jMenuBar1.add(jMenu1);
 
@@ -185,6 +192,23 @@ public class gui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void mnukilepesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnukilepesActionPerformed
+       kilepes();
+    }//GEN-LAST:event_mnukilepesActionPerformed
+    private void kilepes(){
+        String uzenet = "Biztos kilépsz?";
+        String cim = "biztosan"; 
+        int gombok = JOptionPane.OK_CANCEL_OPTION;
+        int tipus = JOptionPane.INFORMATION_MESSAGE;
+        int valasz = JOptionPane.showConfirmDialog(rootPane, uzenet, cim, tipus, gombok);
+        if (valasz ==JOptionPane.YES_OPTION) {
+            final int HIBA_KOD = 0;     
+           System.exit(HIBA_KOD);
+        }
+    }
+        
+    
+
     
     public static void main(String args[]) {
         
@@ -222,10 +246,10 @@ public class gui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JMenuItem mnukilepes;
     // End of variables declaration//GEN-END:variables
 
     
